@@ -1,4 +1,6 @@
 {
+  "id": "preloader",
+  "type": "module",
   "title": "Preloader",
   "description": "A module that allows you to configure content that will be preloaded by the player when he enters the world.",
   "version": "1.1.1",
@@ -32,10 +34,9 @@
       "flags": {}
     }
   ],
-  "id": "preloader",
   "compatibility": {
-    "minimum": "10",
-    "verified": "13"
+    "minimum": 10,
+    "verified": 13
   },
   "url": "https://github.com/gamemasterbeas/FoundryVTT-Preloader",
   "manifest": "https://github.com/gamemasterbeas/FoundryVTT-Preloader/releases/latest/download/module.json",
