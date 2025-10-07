@@ -9,7 +9,7 @@ export class PreloaderApp extends FormApplication {
         this.category = null;
         this.tags = null
     }
-    
+      
     static get defaultOptions() {
         const defaults = super.defaultOptions;
 
@@ -34,14 +34,14 @@ export class PreloaderApp extends FormApplication {
         const sceneIdList = game.settings.get(C.ID, "scenesBuffer");
         return { 
             ids: sceneIdList,
-            info: game.scenes.filter(s => sceneIdList.includes(s.id)).map(s => {return {
-                    name: s.name,
-                    active: s.active,
-                    navigation: s.navigation,
-                    navName: s.navName,
-                    id: s.id,
-                    data: s.data
-                }})
+            info: game.scenes.filter(s => sceneIdList.includes(s.id)).map(s => ({
+                name: s.name,
+                active: s.active,
+                navigation: s.navigation,
+                navName: s.navName ?? s.navigationName ?? null,
+                id: s.id,
+                data: typeof s.toObject === "function" ? s.toObject() : s
+            }))
         }
     }
 
